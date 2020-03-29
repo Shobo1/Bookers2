@@ -1,0 +1,21 @@
+<%= render 'layouts/user_info',book: @book ,user: @user %>
+index.book
+<h1>Books</h1>
+
+  <table>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+  <tr>
+    <% @books.each do |book| %>
+    <td><%= link_to(book.user)  do %>
+    <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+    <% end %></td>
+     <td><%= link_to book.title, book_path(book) %></td>
+
+    <td><%= book.body %></td>
+  </tr>
+    <% end %>
+</table>

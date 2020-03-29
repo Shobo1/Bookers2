@@ -1,0 +1,20 @@
+index.html.erb
+<%= render 'layouts/user_info',book: @book ,user: @user %>
+
+<table>
+  <tr>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+  </tr>
+  <tr>
+
+    <% @users.each do |user| %>
+    <td><%= link_to user_path(user)  do %>
+    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+   <% end %></td>
+     <td><%= user.name %></td>
+    <td><%= link_to "Show", user_path(user) %></td>
+  </tr>
+    <% end %>
+</table>
