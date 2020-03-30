@@ -3,8 +3,8 @@ Books Show
 <div class='container'>
 <div class='row'>
 <div class='col-xs-9'>
-Book detail
-
+<h1>Book detail</h1>
+<table>
     <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
      <%= link_to @user.name, user_path(@user) %></td>
 
@@ -17,6 +17,7 @@ Book detail
     <td><%= link_to "Destroy",book_path(@book.id),class: "btn-sm btn-danger" ,method: :delete,data: { confirm: "Are you sure?"}%></td>
   </tr>
 <% end %>
+</table>
 </div>
 </div>
 </div>
